@@ -1,0 +1,78 @@
+[
+    {
+        "merged": "com.schemewise.app-release-76:/font_outfit_medium.ttf.flat",
+        "source": "com.schemewise.app-main-77:/font/outfit_medium.ttf"
+    },
+    {
+        "merged": "com.schemewise.app-release-76:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.schemewise.app-main-77:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.schemewise.app-release-76:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.schemewise.app-main-77:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.schemewise.app-release-76:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.schemewise.app-main-77:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.schemewise.app-release-76:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.schemewise.app-main-77:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.schemewise.app-release-76:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.schemewise.app-main-77:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.schemewise.app-release-76:/font_outfit_extrabold.ttf.flat",
+        "source": "com.schemewise.app-main-77:/font/outfit_extrabold.ttf"
+    },
+    {
+        "merged": "com.schemewise.app-release-76:/font_outfit_black.ttf.flat",
+        "source": "com.schemewise.app-main-77:/font/outfit_black.ttf"
+    },
+    {
+        "merged": "com.schemewise.app-release-76:/font_outfit_bold.ttf.flat",
+        "source": "com.schemewise.app-main-77:/font/outfit_bold.ttf"
+    },
+    {
+        "merged": "com.schemewise.app-release-76:/font_outfit_semibold.ttf.flat",
+        "source": "com.schemewise.app-main-77:/font/outfit_semibold.ttf"
+    },
+    {
+        "merged": "com.schemewise.app-release-76:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.schemewise.app-main-77:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.schemewise.app-release-76:/layout_activity_subscription.xml.flat",
+        "source": "com.schemewise.app-main-77:/layout/activity_subscription.xml"
+    },
+    {
+        "merged": "com.schemewise.app-release-76:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.schemewise.app-main-77:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.schemewise.app-release-76:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.schemewise.app-main-77:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.schemewise.app-release-76:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.schemewise.app-main-77:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.schemewise.app-release-76:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.schemewise.app-main-77:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.schemewise.app-release-76:/font_outfit_regular.ttf.flat",
+        "source": "com.schemewise.app-main-77:/font/outfit_regular.ttf"
+    },
+    {
+        "merged": "com.schemewise.app-release-76:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.schemewise.app-main-77:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.schemewise.app-release-76:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.schemewise.app-main-77:/mipmap-xxhdpi/ic_launcher.png"
+    }
+]

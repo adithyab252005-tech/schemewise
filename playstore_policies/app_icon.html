@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 512px; height: 512px; overflow: hidden; background: #000; }
+  .icon {
+    width: 512px; height: 512px;
+    background: linear-gradient(145deg, #060F1E 0%, #0D1F3C 50%, #142F58 100%);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  /* Ambient orbs */
+  .orb1 {
+    position: absolute; width: 300px; height: 300px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(249,115,22,0.18) 0%, transparent 70%);
+    top: -80px; left: -80px;
+  }
+  .orb2 {
+    position: absolute; width: 250px; height: 250px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 70%);
+    bottom: -60px; right: -60px;
+  }
+  /* Tricolor top strip */
+  .tricolor {
+    position: absolute; top: 0; left: 0; right: 0; height: 6px;
+    display: flex;
+  }
+  .tricolor div { flex: 1; }
+  /* Outer glow ring */
+  .ring {
+    position: absolute;
+    width: 280px; height: 280px; border-radius: 72px;
+    border: 2px solid rgba(249,115,22,0.25);
+    box-shadow: 0 0 40px rgba(249,115,22,0.15), inset 0 0 40px rgba(249,115,22,0.05);
+  }
+  /* Main logo box */
+  .logo-box {
+    width: 220px; height: 220px;
+    background: linear-gradient(145deg, #F97316, #EA580C, #C2410C);
+    border-radius: 56px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    box-shadow: 0 20px 60px rgba(249,115,22,0.5), 0 0 0 3px rgba(249,115,22,0.2);
+    position: relative; z-index: 2;
+  }
+  .sw-text {
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 80px; font-weight: 900;
+    color: white; letter-spacing: -4px;
+    line-height: 1; text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  .tagline {
+    font-family: Arial, sans-serif;
+    font-size: 13px; font-weight: 700;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 3px; margin-top: 6px;
+    text-transform: uppercase;
+  }
+  /* Dot grid decoration */
+  .dots {
+    position: absolute; bottom: 30px; right: 30px;
+    display: grid; grid-template-columns: repeat(5, 8px); gap: 6px;
+    opacity: 0.15;
+  }
+  .dots span {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #F97316;
+  }
+</style>
+</head>
+<body>
+<div class="icon">
+  <div class="orb1"></div>
+  <div class="orb2"></div>
+  <div class="tricolor">
+    <div style="background:#F97316;"></div>
+    <div style="background:rgba(255,255,255,0.3);"></div>
+    <div style="background:#22C55E;"></div>
+  </div>
+  <div class="ring"></div>
+  <div class="logo-box">
+    <div class="sw-text">SW</div>
+    <div class="tagline">WISE</div>
+  </div>
+  <div class="dots">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+</div>
+</body>
+</html>

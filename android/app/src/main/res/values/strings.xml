@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SchemeWise</string>
+    <string name="bottom_nav_home">Home</string>
+    <string name="bottom_nav_explore">Explore</string>
+    <string name="bottom_nav_simulator">Simulator</string>
+    <string name="bottom_nav_saved">Saved</string>
+    <string name="bottom_nav_bot">AI Bot</string>
+</resources>

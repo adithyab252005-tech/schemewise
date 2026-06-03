@@ -1,0 +1,33 @@
+simats.git@gmail.com
+Email Format:
+
+App Name: SchemeWise
+Student Name: [Your Name]
+Reg No: [Your Registration Number]
+Mobile no: [Your Mobile Number]
+Course Code: [Your Course Code]
+
+Short Description: 
+Discover and check your eligibility for government schemes easily.
+
+Full Description: 
+SchemeWise is an intelligent platform designed to help citizens, specifically students and professionals in India, discover state and central government schemes they are eligible for. By leveraging advanced matching algorithms, the app compares your profile details such as age, caste, and income against the comprehensive criteria of various socio-economic programs. Skip the complex manual searches and let SchemeWise find the support you deserve in seconds!
+
+Privacy Policy URL: https://[your-github-username].github.io/playstore_policies/privacy-policy.html
+Delete Account URL: https://[your-github-username].github.io/playstore_policies/delete-data.html
+
+Emails: (comma separated email list - minimum 12)
+[your_test_email1]@gmail.com, [email2]@gmail.com, [email3]@gmail.com, [email4]@gmail.com, [email5]@gmail.com, [email6]@gmail.com, [email7]@gmail.com, [email8]@gmail.com, [email9]@gmail.com, [email10]@gmail.com, [email11]@gmail.com, [email12]@gmail.com
+
+App Access credentials: 
+User login
+username/email: testuser@schemewise.com
+password: securepassword123
+
+Attachments:
+App icon - (Please generate and attach a 512x512 png)
+Feature graphic - (Please generate and attach a 1024x500 png)
+Screenshots - (Please attach 5 screenshots from your phone running SchemeWise)
+Android app bundle(.aab) file - schemewise-release.aab
+
+Subscription_sku: schemewise_premium_subscription

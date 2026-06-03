@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
+
+/* ── Ultra Level Design Tokens ─────────────────────────────── */
+:root {
+  --brand-orange: #f97316;
+  --brand-orange-glow: rgba(249, 115, 22, 0.3);
+  --brand-orange-gradient: linear-gradient(135deg, #fb923c 0%, #ea580c 100%);
+  
+  /* Pristine Light Mode */
+  --bg-layer-1: #FAFAFA;
+  --bg-layer-2: #F1F5F9;
+  --bg-layer-3: #FFFFFF;
+  --border-subtle: rgba(0,0,0,0.06);
+  --border-highlight: rgba(0,0,0,0.12);
+  --shadow-pro: 0 4px 6px -1px rgba(0,0,0,0.02), 0 2px 4px -2px rgba(0,0,0,0.02);
+  --shadow-hover: 0 10px 20px -5px rgba(0,0,0,0.05), 0 4px 6px -2px rgba(0,0,0,0.02);
+  --text-main: #0f172a;
+}
+
+.dark {
+  --brand-orange: #FF5E00;
+  --brand-orange-glow: rgba(255, 94, 0, 0.4);
+  --brand-orange-gradient: linear-gradient(135deg, #FF7E20 0%, #FF3D00 100%);
+  
+  /* God Tier Dark Carbon */
+  --bg-layer-1: #06080A;
+  --bg-layer-2: #0B0E14;
+  --bg-layer-3: #11151C;
+  --border-subtle: rgba(255,255,255,0.06);
+  --border-highlight: rgba(255,255,255,0.12);
+  --shadow-pro: 0 10px 30px -10px rgba(0,0,0,0.6), 0 4px 10px -2px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.05);
+  --shadow-hover: 0 30px 60px -15px rgba(255, 94, 0, 0.1), 0 10px 20px -5px rgba(0,0,0,0.6), inset 0 1px 1px rgba(255, 94, 0, 0.2);
+  --text-main: #F8FAFC;
+}
+
+/* ── Global Base ────────────────────────────────── */
+html {
+  font-family: 'Outfit', system-ui, sans-serif;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-layer-1);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Force Outfit everywhere to eliminate "chatgpt like" standard fonts */
+.font-sans, p, span, h1, h2, h3, h4, h5, h6, a, button {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+}
+
+/* ── Ambient Underglow ──────────────────────── */
+.ambient-mesh {
+  display: none; /* Disabled for pristine feel */
+}
+
+/* ── Ultra Level 3D Cards (The God-Tier Look) ────── */
+.glass-panel,
+.pro-card {
+  background: var(--bg-layer-3) !important;
+  border-radius: 24px;
+  position: relative;
+  z-index: 1;
+  border: 1px solid var(--border-subtle) !important;
+  box-shadow: var(--shadow-pro) !important;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover effects for premium interaction */
+.card-hover:hover {
+  transform: translateY(-5px);
+  border-color: rgba(249, 115, 22, 0.3) !important;
+  box-shadow: var(--shadow-hover) !important;
+}
+
+/* ── Ultimate Gradient Text ──────────────────────────────── */
+.text-gradient-orange {
+  background: var(--brand-orange-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-gradient-silver {
+  color: var(--text-main);
+}
+.dark .text-gradient-silver {
+  background: linear-gradient(135deg, #FFFFFF 0%, #8A96A8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Elite Buttons ────────────────────────────────────── */
+.btn-ultra {
+  background: var(--brand-orange-gradient);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 4px 10px -2px var(--brand-orange-glow),
+    inset 0 1px 1px rgba(255,255,255,0.3);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+.btn-ultra:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 10px 20px -5px rgba(234, 88, 12, 0.4),
+    inset 0 1px 1px rgba(255,255,255,0.4);
+}
+
+.btn-glass {
+  background: var(--bg-layer-2);
+  border: 1px solid var(--border-highlight);
+  color: var(--text-main);
+  box-shadow: var(--shadow-pro);
+  transition: all 0.3s ease;
+}
+.btn-glass:hover {
+  background: var(--bg-layer-3);
+  border-color: rgba(234, 88, 12, 0.3);
+  transform: translateY(-2px);
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-layer-1); }
+::-webkit-scrollbar-thumb { background-color: #2D3748; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background-color: #4A5568; }
+
+/* ── God-Tier Animations ─────────────────────────────── */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in-scale {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(255, 94, 0, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(255, 94, 0, 0.7), 0 0 40px rgba(255, 94, 0, 0.2); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.animate-fade-in { animation: fade-in 0.4s ease-out both; }
+.animate-fade-in-up { animation: fade-in-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-fade-in-scale { animation: fade-in-scale 0.4s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-slide-in-left { animation: slide-in-left 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-slide-in-right { animation: slide-in-right 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-glow-pulse { animation: glow-pulse 2.5s ease-in-out infinite; }
+.animate-float { animation: float 4s ease-in-out infinite; }
+
+/* Staggered children animation */
+.stagger-children > * {
+  animation: fade-in-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.stagger-children > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-children > *:nth-child(2) { animation-delay: 60ms; }
+.stagger-children > *:nth-child(3) { animation-delay: 120ms; }
+.stagger-children > *:nth-child(4) { animation-delay: 180ms; }
+.stagger-children > *:nth-child(5) { animation-delay: 240ms; }
+.stagger-children > *:nth-child(6) { animation-delay: 300ms; }
+
+/* Shimmer loading skeleton */
+.shimmer {
+  background: linear-gradient(90deg, 
+    var(--bg-layer-2) 25%, 
+    var(--bg-layer-3) 50%, 
+    var(--bg-layer-2) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Premium page enter transitions */
+.section-scroll > * {
+  animation: fade-in-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Nav active glow */
+.nav-active-glow {
+  box-shadow: 0 0 10px rgba(255, 94, 0, 0.6), 0 0 20px rgba(255, 94, 0, 0.2);
+}
+
+/* Hover card lift */
+.pro-card:hover {
+  box-shadow: var(--shadow-hover) !important;
+  transform: translateY(-1px);
+}
+
+/* Input focus glow */
+input:focus, textarea:focus, select:focus {
+  box-shadow: 0 0 0 3px rgba(255, 94, 0, 0.15);
+}

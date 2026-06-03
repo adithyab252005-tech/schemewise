@@ -1,0 +1,911 @@
+package com.schemewise.app;
+
+import android.app.Activity;
+import android.app.Service;
+import android.view.View;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.SavedStateHandle;
+import androidx.lifecycle.ViewModel;
+import com.schemewise.app.data.api.ApiService;
+import com.schemewise.app.data.api.AuthInterceptor;
+import com.schemewise.app.data.local.PrefsManager;
+import com.schemewise.app.data.repository.AuthRepository;
+import com.schemewise.app.data.repository.ProfileRepository;
+import com.schemewise.app.data.repository.SchemeRepository;
+import com.schemewise.app.di.AppModule_ProvideApiServiceFactory;
+import com.schemewise.app.di.AppModule_ProvideMoshiFactory;
+import com.schemewise.app.di.AppModule_ProvideOkHttpFactory;
+import com.schemewise.app.di.AppModule_ProvidePrefsManagerFactory;
+import com.schemewise.app.di.AppModule_ProvideRetrofitFactory;
+import com.schemewise.app.ui.screens.auth.ForgotPasswordViewModel;
+import com.schemewise.app.ui.screens.auth.ForgotPasswordViewModel_HiltModules;
+import com.schemewise.app.ui.screens.auth.LoginViewModel;
+import com.schemewise.app.ui.screens.auth.LoginViewModel_HiltModules;
+import com.schemewise.app.ui.screens.auth.RegisterViewModel;
+import com.schemewise.app.ui.screens.auth.RegisterViewModel_HiltModules;
+import com.schemewise.app.ui.screens.bot.BotViewModel;
+import com.schemewise.app.ui.screens.bot.BotViewModel_HiltModules;
+import com.schemewise.app.ui.screens.centers.CentersMapViewModel;
+import com.schemewise.app.ui.screens.centers.CentersMapViewModel_HiltModules;
+import com.schemewise.app.ui.screens.explore.ExploreViewModel;
+import com.schemewise.app.ui.screens.explore.ExploreViewModel_HiltModules;
+import com.schemewise.app.ui.screens.home.HomeViewModel;
+import com.schemewise.app.ui.screens.home.HomeViewModel_HiltModules;
+import com.schemewise.app.ui.screens.onboarding.DetailsFillingViewModel;
+import com.schemewise.app.ui.screens.onboarding.DetailsFillingViewModel_HiltModules;
+import com.schemewise.app.ui.screens.onboarding.EligibilityResultsViewModel;
+import com.schemewise.app.ui.screens.onboarding.EligibilityResultsViewModel_HiltModules;
+import com.schemewise.app.ui.screens.profile.ProfileViewModel;
+import com.schemewise.app.ui.screens.profile.ProfileViewModel_HiltModules;
+import com.schemewise.app.ui.screens.saved.SavedViewModel;
+import com.schemewise.app.ui.screens.saved.SavedViewModel_HiltModules;
+import com.schemewise.app.ui.screens.scheme.CompareViewModel;
+import com.schemewise.app.ui.screens.scheme.CompareViewModel_HiltModules;
+import com.schemewise.app.ui.screens.scheme.SchemeDetailViewModel;
+import com.schemewise.app.ui.screens.scheme.SchemeDetailViewModel_HiltModules;
+import com.schemewise.app.ui.screens.simulator.SimulatorViewModel;
+import com.schemewise.app.ui.screens.simulator.SimulatorViewModel_HiltModules;
+import com.schemewise.app.ui.screens.updates.UpdatesViewModel;
+import com.schemewise.app.ui.screens.updates.UpdatesViewModel_HiltModules;
+import com.squareup.moshi.Moshi;
+import dagger.hilt.android.ActivityRetainedLifecycle;
+import dagger.hilt.android.ViewModelLifecycle;
+import dagger.hilt.android.internal.builders.ActivityComponentBuilder;
+import dagger.hilt.android.internal.builders.ActivityRetainedComponentBuilder;
+import dagger.hilt.android.internal.builders.FragmentComponentBuilder;
+import dagger.hilt.android.internal.builders.ServiceComponentBuilder;
+import dagger.hilt.android.internal.builders.ViewComponentBuilder;
+import dagger.hilt.android.internal.builders.ViewModelComponentBuilder;
+import dagger.hilt.android.internal.builders.ViewWithFragmentComponentBuilder;
+import dagger.hilt.android.internal.lifecycle.DefaultViewModelFactories;
+import dagger.hilt.android.internal.lifecycle.DefaultViewModelFactories_InternalFactoryFactory_Factory;
+import dagger.hilt.android.internal.managers.ActivityRetainedComponentManager_LifecycleModule_ProvideActivityRetainedLifecycleFactory;
+import dagger.hilt.android.internal.managers.SavedStateHandleHolder;
+import dagger.hilt.android.internal.modules.ApplicationContextModule;
+import dagger.hilt.android.internal.modules.ApplicationContextModule_ProvideContextFactory;
+import dagger.internal.DaggerGenerated;
+import dagger.internal.DoubleCheck;
+import dagger.internal.IdentifierNameString;
+import dagger.internal.KeepFieldType;
+import dagger.internal.LazyClassKeyMap;
+import dagger.internal.MapBuilder;
+import dagger.internal.Preconditions;
+import dagger.internal.Provider;
+import java.util.Collections;
+import java.util.Map;
+import java.util.Set;
+import javax.annotation.processing.Generated;
+import okhttp3.OkHttpClient;
+import retrofit2.Retrofit;
+
+@DaggerGenerated
+@Generated(
+    value = "dagger.internal.codegen.ComponentProcessor",
+    comments = "https://dagger.dev"
+)
+@SuppressWarnings({
+    "unchecked",
+    "rawtypes",
+    "KotlinInternal",
+    "KotlinInternalInJava",
+    "cast"
+})
+public final class DaggerSchemeWiseApp_HiltComponents_SingletonC {
+  private DaggerSchemeWiseApp_HiltComponents_SingletonC() {
+  }
+
+  public static Builder builder() {
+    return new Builder();
+  }
+
+  public static final class Builder {
+    private ApplicationContextModule applicationContextModule;
+
+    private Builder() {
+    }
+
+    public Builder applicationContextModule(ApplicationContextModule applicationContextModule) {
+      this.applicationContextModule = Preconditions.checkNotNull(applicationContextModule);
+      return this;
+    }
+
+    public SchemeWiseApp_HiltComponents.SingletonC build() {
+      Preconditions.checkBuilderRequirement(applicationContextModule, ApplicationContextModule.class);
+      return new SingletonCImpl(applicationContextModule);
+    }
+  }
+
+  private static final class ActivityRetainedCBuilder implements SchemeWiseApp_HiltComponents.ActivityRetainedC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private SavedStateHandleHolder savedStateHandleHolder;
+
+    private ActivityRetainedCBuilder(SingletonCImpl singletonCImpl) {
+      this.singletonCImpl = singletonCImpl;
+    }
+
+    @Override
+    public ActivityRetainedCBuilder savedStateHandleHolder(
+        SavedStateHandleHolder savedStateHandleHolder) {
+      this.savedStateHandleHolder = Preconditions.checkNotNull(savedStateHandleHolder);
+      return this;
+    }
+
+    @Override
+    public SchemeWiseApp_HiltComponents.ActivityRetainedC build() {
+      Preconditions.checkBuilderRequirement(savedStateHandleHolder, SavedStateHandleHolder.class);
+      return new ActivityRetainedCImpl(singletonCImpl, savedStateHandleHolder);
+    }
+  }
+
+  private static final class ActivityCBuilder implements SchemeWiseApp_HiltComponents.ActivityC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private Activity activity;
+
+    private ActivityCBuilder(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+    }
+
+    @Override
+    public ActivityCBuilder activity(Activity activity) {
+      this.activity = Preconditions.checkNotNull(activity);
+      return this;
+    }
+
+    @Override
+    public SchemeWiseApp_HiltComponents.ActivityC build() {
+      Preconditions.checkBuilderRequirement(activity, Activity.class);
+      return new ActivityCImpl(singletonCImpl, activityRetainedCImpl, activity);
+    }
+  }
+
+  private static final class FragmentCBuilder implements SchemeWiseApp_HiltComponents.FragmentC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl;
+
+    private Fragment fragment;
+
+    private FragmentCBuilder(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl, ActivityCImpl activityCImpl) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+      this.activityCImpl = activityCImpl;
+    }
+
+    @Override
+    public FragmentCBuilder fragment(Fragment fragment) {
+      this.fragment = Preconditions.checkNotNull(fragment);
+      return this;
+    }
+
+    @Override
+    public SchemeWiseApp_HiltComponents.FragmentC build() {
+      Preconditions.checkBuilderRequirement(fragment, Fragment.class);
+      return new FragmentCImpl(singletonCImpl, activityRetainedCImpl, activityCImpl, fragment);
+    }
+  }
+
+  private static final class ViewWithFragmentCBuilder implements SchemeWiseApp_HiltComponents.ViewWithFragmentC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl;
+
+    private final FragmentCImpl fragmentCImpl;
+
+    private View view;
+
+    private ViewWithFragmentCBuilder(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl, ActivityCImpl activityCImpl,
+        FragmentCImpl fragmentCImpl) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+      this.activityCImpl = activityCImpl;
+      this.fragmentCImpl = fragmentCImpl;
+    }
+
+    @Override
+    public ViewWithFragmentCBuilder view(View view) {
+      this.view = Preconditions.checkNotNull(view);
+      return this;
+    }
+
+    @Override
+    public SchemeWiseApp_HiltComponents.ViewWithFragmentC build() {
+      Preconditions.checkBuilderRequirement(view, View.class);
+      return new ViewWithFragmentCImpl(singletonCImpl, activityRetainedCImpl, activityCImpl, fragmentCImpl, view);
+    }
+  }
+
+  private static final class ViewCBuilder implements SchemeWiseApp_HiltComponents.ViewC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl;
+
+    private View view;
+
+    private ViewCBuilder(SingletonCImpl singletonCImpl, ActivityRetainedCImpl activityRetainedCImpl,
+        ActivityCImpl activityCImpl) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+      this.activityCImpl = activityCImpl;
+    }
+
+    @Override
+    public ViewCBuilder view(View view) {
+      this.view = Preconditions.checkNotNull(view);
+      return this;
+    }
+
+    @Override
+    public SchemeWiseApp_HiltComponents.ViewC build() {
+      Preconditions.checkBuilderRequirement(view, View.class);
+      return new ViewCImpl(singletonCImpl, activityRetainedCImpl, activityCImpl, view);
+    }
+  }
+
+  private static final class ViewModelCBuilder implements SchemeWiseApp_HiltComponents.ViewModelC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private SavedStateHandle savedStateHandle;
+
+    private ViewModelLifecycle viewModelLifecycle;
+
+    private ViewModelCBuilder(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+    }
+
+    @Override
+    public ViewModelCBuilder savedStateHandle(SavedStateHandle handle) {
+      this.savedStateHandle = Preconditions.checkNotNull(handle);
+      return this;
+    }
+
+    @Override
+    public ViewModelCBuilder viewModelLifecycle(ViewModelLifecycle viewModelLifecycle) {
+      this.viewModelLifecycle = Preconditions.checkNotNull(viewModelLifecycle);
+      return this;
+    }
+
+    @Override
+    public SchemeWiseApp_HiltComponents.ViewModelC build() {
+      Preconditions.checkBuilderRequirement(savedStateHandle, SavedStateHandle.class);
+      Preconditions.checkBuilderRequirement(viewModelLifecycle, ViewModelLifecycle.class);
+      return new ViewModelCImpl(singletonCImpl, activityRetainedCImpl, savedStateHandle, viewModelLifecycle);
+    }
+  }
+
+  private static final class ServiceCBuilder implements SchemeWiseApp_HiltComponents.ServiceC.Builder {
+    private final SingletonCImpl singletonCImpl;
+
+    private Service service;
+
+    private ServiceCBuilder(SingletonCImpl singletonCImpl) {
+      this.singletonCImpl = singletonCImpl;
+    }
+
+    @Override
+    public ServiceCBuilder service(Service service) {
+      this.service = Preconditions.checkNotNull(service);
+      return this;
+    }
+
+    @Override
+    public SchemeWiseApp_HiltComponents.ServiceC build() {
+      Preconditions.checkBuilderRequirement(service, Service.class);
+      return new ServiceCImpl(singletonCImpl, service);
+    }
+  }
+
+  private static final class ViewWithFragmentCImpl extends SchemeWiseApp_HiltComponents.ViewWithFragmentC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl;
+
+    private final FragmentCImpl fragmentCImpl;
+
+    private final ViewWithFragmentCImpl viewWithFragmentCImpl = this;
+
+    private ViewWithFragmentCImpl(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl, ActivityCImpl activityCImpl,
+        FragmentCImpl fragmentCImpl, View viewParam) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+      this.activityCImpl = activityCImpl;
+      this.fragmentCImpl = fragmentCImpl;
+
+
+    }
+  }
+
+  private static final class FragmentCImpl extends SchemeWiseApp_HiltComponents.FragmentC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl;
+
+    private final FragmentCImpl fragmentCImpl = this;
+
+    private FragmentCImpl(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl, ActivityCImpl activityCImpl,
+        Fragment fragmentParam) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+      this.activityCImpl = activityCImpl;
+
+
+    }
+
+    @Override
+    public DefaultViewModelFactories.InternalFactoryFactory getHiltInternalFactoryFactory() {
+      return activityCImpl.getHiltInternalFactoryFactory();
+    }
+
+    @Override
+    public ViewWithFragmentComponentBuilder viewWithFragmentComponentBuilder() {
+      return new ViewWithFragmentCBuilder(singletonCImpl, activityRetainedCImpl, activityCImpl, fragmentCImpl);
+    }
+  }
+
+  private static final class ViewCImpl extends SchemeWiseApp_HiltComponents.ViewC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl;
+
+    private final ViewCImpl viewCImpl = this;
+
+    private ViewCImpl(SingletonCImpl singletonCImpl, ActivityRetainedCImpl activityRetainedCImpl,
+        ActivityCImpl activityCImpl, View viewParam) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+      this.activityCImpl = activityCImpl;
+
+
+    }
+  }
+
+  private static final class ActivityCImpl extends SchemeWiseApp_HiltComponents.ActivityC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ActivityCImpl activityCImpl = this;
+
+    private ActivityCImpl(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl, Activity activityParam) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+
+
+    }
+
+    @Override
+    public void injectMainActivity(MainActivity arg0) {
+    }
+
+    @Override
+    public DefaultViewModelFactories.InternalFactoryFactory getHiltInternalFactoryFactory() {
+      return DefaultViewModelFactories_InternalFactoryFactory_Factory.newInstance(getViewModelKeys(), new ViewModelCBuilder(singletonCImpl, activityRetainedCImpl));
+    }
+
+    @Override
+    public Map<Class<?>, Boolean> getViewModelKeys() {
+      return LazyClassKeyMap.<Boolean>of(MapBuilder.<String, Boolean>newMapBuilder(15).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_bot_BotViewModel, BotViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_centers_CentersMapViewModel, CentersMapViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_scheme_CompareViewModel, CompareViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_onboarding_DetailsFillingViewModel, DetailsFillingViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_onboarding_EligibilityResultsViewModel, EligibilityResultsViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_explore_ExploreViewModel, ExploreViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_auth_ForgotPasswordViewModel, ForgotPasswordViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_home_HomeViewModel, HomeViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_auth_LoginViewModel, LoginViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_profile_ProfileViewModel, ProfileViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_auth_RegisterViewModel, RegisterViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_saved_SavedViewModel, SavedViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_scheme_SchemeDetailViewModel, SchemeDetailViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_simulator_SimulatorViewModel, SimulatorViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_updates_UpdatesViewModel, UpdatesViewModel_HiltModules.KeyModule.provide()).build());
+    }
+
+    @Override
+    public ViewModelComponentBuilder getViewModelComponentBuilder() {
+      return new ViewModelCBuilder(singletonCImpl, activityRetainedCImpl);
+    }
+
+    @Override
+    public FragmentComponentBuilder fragmentComponentBuilder() {
+      return new FragmentCBuilder(singletonCImpl, activityRetainedCImpl, activityCImpl);
+    }
+
+    @Override
+    public ViewComponentBuilder viewComponentBuilder() {
+      return new ViewCBuilder(singletonCImpl, activityRetainedCImpl, activityCImpl);
+    }
+
+    @IdentifierNameString
+    private static final class LazyClassKeyProvider {
+      static String com_schemewise_app_ui_screens_bot_BotViewModel = "com.schemewise.app.ui.screens.bot.BotViewModel";
+
+      static String com_schemewise_app_ui_screens_auth_LoginViewModel = "com.schemewise.app.ui.screens.auth.LoginViewModel";
+
+      static String com_schemewise_app_ui_screens_simulator_SimulatorViewModel = "com.schemewise.app.ui.screens.simulator.SimulatorViewModel";
+
+      static String com_schemewise_app_ui_screens_scheme_SchemeDetailViewModel = "com.schemewise.app.ui.screens.scheme.SchemeDetailViewModel";
+
+      static String com_schemewise_app_ui_screens_scheme_CompareViewModel = "com.schemewise.app.ui.screens.scheme.CompareViewModel";
+
+      static String com_schemewise_app_ui_screens_onboarding_EligibilityResultsViewModel = "com.schemewise.app.ui.screens.onboarding.EligibilityResultsViewModel";
+
+      static String com_schemewise_app_ui_screens_updates_UpdatesViewModel = "com.schemewise.app.ui.screens.updates.UpdatesViewModel";
+
+      static String com_schemewise_app_ui_screens_saved_SavedViewModel = "com.schemewise.app.ui.screens.saved.SavedViewModel";
+
+      static String com_schemewise_app_ui_screens_auth_ForgotPasswordViewModel = "com.schemewise.app.ui.screens.auth.ForgotPasswordViewModel";
+
+      static String com_schemewise_app_ui_screens_auth_RegisterViewModel = "com.schemewise.app.ui.screens.auth.RegisterViewModel";
+
+      static String com_schemewise_app_ui_screens_centers_CentersMapViewModel = "com.schemewise.app.ui.screens.centers.CentersMapViewModel";
+
+      static String com_schemewise_app_ui_screens_onboarding_DetailsFillingViewModel = "com.schemewise.app.ui.screens.onboarding.DetailsFillingViewModel";
+
+      static String com_schemewise_app_ui_screens_profile_ProfileViewModel = "com.schemewise.app.ui.screens.profile.ProfileViewModel";
+
+      static String com_schemewise_app_ui_screens_home_HomeViewModel = "com.schemewise.app.ui.screens.home.HomeViewModel";
+
+      static String com_schemewise_app_ui_screens_explore_ExploreViewModel = "com.schemewise.app.ui.screens.explore.ExploreViewModel";
+
+      @KeepFieldType
+      BotViewModel com_schemewise_app_ui_screens_bot_BotViewModel2;
+
+      @KeepFieldType
+      LoginViewModel com_schemewise_app_ui_screens_auth_LoginViewModel2;
+
+      @KeepFieldType
+      SimulatorViewModel com_schemewise_app_ui_screens_simulator_SimulatorViewModel2;
+
+      @KeepFieldType
+      SchemeDetailViewModel com_schemewise_app_ui_screens_scheme_SchemeDetailViewModel2;
+
+      @KeepFieldType
+      CompareViewModel com_schemewise_app_ui_screens_scheme_CompareViewModel2;
+
+      @KeepFieldType
+      EligibilityResultsViewModel com_schemewise_app_ui_screens_onboarding_EligibilityResultsViewModel2;
+
+      @KeepFieldType
+      UpdatesViewModel com_schemewise_app_ui_screens_updates_UpdatesViewModel2;
+
+      @KeepFieldType
+      SavedViewModel com_schemewise_app_ui_screens_saved_SavedViewModel2;
+
+      @KeepFieldType
+      ForgotPasswordViewModel com_schemewise_app_ui_screens_auth_ForgotPasswordViewModel2;
+
+      @KeepFieldType
+      RegisterViewModel com_schemewise_app_ui_screens_auth_RegisterViewModel2;
+
+      @KeepFieldType
+      CentersMapViewModel com_schemewise_app_ui_screens_centers_CentersMapViewModel2;
+
+      @KeepFieldType
+      DetailsFillingViewModel com_schemewise_app_ui_screens_onboarding_DetailsFillingViewModel2;
+
+      @KeepFieldType
+      ProfileViewModel com_schemewise_app_ui_screens_profile_ProfileViewModel2;
+
+      @KeepFieldType
+      HomeViewModel com_schemewise_app_ui_screens_home_HomeViewModel2;
+
+      @KeepFieldType
+      ExploreViewModel com_schemewise_app_ui_screens_explore_ExploreViewModel2;
+    }
+  }
+
+  private static final class ViewModelCImpl extends SchemeWiseApp_HiltComponents.ViewModelC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl;
+
+    private final ViewModelCImpl viewModelCImpl = this;
+
+    private Provider<BotViewModel> botViewModelProvider;
+
+    private Provider<CentersMapViewModel> centersMapViewModelProvider;
+
+    private Provider<CompareViewModel> compareViewModelProvider;
+
+    private Provider<DetailsFillingViewModel> detailsFillingViewModelProvider;
+
+    private Provider<EligibilityResultsViewModel> eligibilityResultsViewModelProvider;
+
+    private Provider<ExploreViewModel> exploreViewModelProvider;
+
+    private Provider<ForgotPasswordViewModel> forgotPasswordViewModelProvider;
+
+    private Provider<HomeViewModel> homeViewModelProvider;
+
+    private Provider<LoginViewModel> loginViewModelProvider;
+
+    private Provider<ProfileViewModel> profileViewModelProvider;
+
+    private Provider<RegisterViewModel> registerViewModelProvider;
+
+    private Provider<SavedViewModel> savedViewModelProvider;
+
+    private Provider<SchemeDetailViewModel> schemeDetailViewModelProvider;
+
+    private Provider<SimulatorViewModel> simulatorViewModelProvider;
+
+    private Provider<UpdatesViewModel> updatesViewModelProvider;
+
+    private ViewModelCImpl(SingletonCImpl singletonCImpl,
+        ActivityRetainedCImpl activityRetainedCImpl, SavedStateHandle savedStateHandleParam,
+        ViewModelLifecycle viewModelLifecycleParam) {
+      this.singletonCImpl = singletonCImpl;
+      this.activityRetainedCImpl = activityRetainedCImpl;
+
+      initialize(savedStateHandleParam, viewModelLifecycleParam);
+
+    }
+
+    @SuppressWarnings("unchecked")
+    private void initialize(final SavedStateHandle savedStateHandleParam,
+        final ViewModelLifecycle viewModelLifecycleParam) {
+      this.botViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 0);
+      this.centersMapViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 1);
+      this.compareViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 2);
+      this.detailsFillingViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 3);
+      this.eligibilityResultsViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 4);
+      this.exploreViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 5);
+      this.forgotPasswordViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 6);
+      this.homeViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 7);
+      this.loginViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 8);
+      this.profileViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 9);
+      this.registerViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 10);
+      this.savedViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 11);
+      this.schemeDetailViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 12);
+      this.simulatorViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 13);
+      this.updatesViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 14);
+    }
+
+    @Override
+    public Map<Class<?>, javax.inject.Provider<ViewModel>> getHiltViewModelMap() {
+      return LazyClassKeyMap.<javax.inject.Provider<ViewModel>>of(MapBuilder.<String, javax.inject.Provider<ViewModel>>newMapBuilder(15).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_bot_BotViewModel, ((Provider) botViewModelProvider)).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_centers_CentersMapViewModel, ((Provider) centersMapViewModelProvider)).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_scheme_CompareViewModel, ((Provider) compareViewModelProvider)).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_onboarding_DetailsFillingViewModel, ((Provider) detailsFillingViewModelProvider)).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_onboarding_EligibilityResultsViewModel, ((Provider) eligibilityResultsViewModelProvider)).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_explore_ExploreViewModel, ((Provider) exploreViewModelProvider)).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_auth_ForgotPasswordViewModel, ((Provider) forgotPasswordViewModelProvider)).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_home_HomeViewModel, ((Provider) homeViewModelProvider)).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_auth_LoginViewModel, ((Provider) loginViewModelProvider)).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_profile_ProfileViewModel, ((Provider) profileViewModelProvider)).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_auth_RegisterViewModel, ((Provider) registerViewModelProvider)).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_saved_SavedViewModel, ((Provider) savedViewModelProvider)).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_scheme_SchemeDetailViewModel, ((Provider) schemeDetailViewModelProvider)).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_simulator_SimulatorViewModel, ((Provider) simulatorViewModelProvider)).put(LazyClassKeyProvider.com_schemewise_app_ui_screens_updates_UpdatesViewModel, ((Provider) updatesViewModelProvider)).build());
+    }
+
+    @Override
+    public Map<Class<?>, Object> getHiltViewModelAssistedMap() {
+      return Collections.<Class<?>, Object>emptyMap();
+    }
+
+    @IdentifierNameString
+    private static final class LazyClassKeyProvider {
+      static String com_schemewise_app_ui_screens_home_HomeViewModel = "com.schemewise.app.ui.screens.home.HomeViewModel";
+
+      static String com_schemewise_app_ui_screens_simulator_SimulatorViewModel = "com.schemewise.app.ui.screens.simulator.SimulatorViewModel";
+
+      static String com_schemewise_app_ui_screens_onboarding_DetailsFillingViewModel = "com.schemewise.app.ui.screens.onboarding.DetailsFillingViewModel";
+
+      static String com_schemewise_app_ui_screens_auth_ForgotPasswordViewModel = "com.schemewise.app.ui.screens.auth.ForgotPasswordViewModel";
+
+      static String com_schemewise_app_ui_screens_auth_RegisterViewModel = "com.schemewise.app.ui.screens.auth.RegisterViewModel";
+
+      static String com_schemewise_app_ui_screens_onboarding_EligibilityResultsViewModel = "com.schemewise.app.ui.screens.onboarding.EligibilityResultsViewModel";
+
+      static String com_schemewise_app_ui_screens_scheme_CompareViewModel = "com.schemewise.app.ui.screens.scheme.CompareViewModel";
+
+      static String com_schemewise_app_ui_screens_auth_LoginViewModel = "com.schemewise.app.ui.screens.auth.LoginViewModel";
+
+      static String com_schemewise_app_ui_screens_scheme_SchemeDetailViewModel = "com.schemewise.app.ui.screens.scheme.SchemeDetailViewModel";
+
+      static String com_schemewise_app_ui_screens_explore_ExploreViewModel = "com.schemewise.app.ui.screens.explore.ExploreViewModel";
+
+      static String com_schemewise_app_ui_screens_bot_BotViewModel = "com.schemewise.app.ui.screens.bot.BotViewModel";
+
+      static String com_schemewise_app_ui_screens_updates_UpdatesViewModel = "com.schemewise.app.ui.screens.updates.UpdatesViewModel";
+
+      static String com_schemewise_app_ui_screens_centers_CentersMapViewModel = "com.schemewise.app.ui.screens.centers.CentersMapViewModel";
+
+      static String com_schemewise_app_ui_screens_profile_ProfileViewModel = "com.schemewise.app.ui.screens.profile.ProfileViewModel";
+
+      static String com_schemewise_app_ui_screens_saved_SavedViewModel = "com.schemewise.app.ui.screens.saved.SavedViewModel";
+
+      @KeepFieldType
+      HomeViewModel com_schemewise_app_ui_screens_home_HomeViewModel2;
+
+      @KeepFieldType
+      SimulatorViewModel com_schemewise_app_ui_screens_simulator_SimulatorViewModel2;
+
+      @KeepFieldType
+      DetailsFillingViewModel com_schemewise_app_ui_screens_onboarding_DetailsFillingViewModel2;
+
+      @KeepFieldType
+      ForgotPasswordViewModel com_schemewise_app_ui_screens_auth_ForgotPasswordViewModel2;
+
+      @KeepFieldType
+      RegisterViewModel com_schemewise_app_ui_screens_auth_RegisterViewModel2;
+
+      @KeepFieldType
+      EligibilityResultsViewModel com_schemewise_app_ui_screens_onboarding_EligibilityResultsViewModel2;
+
+      @KeepFieldType
+      CompareViewModel com_schemewise_app_ui_screens_scheme_CompareViewModel2;
+
+      @KeepFieldType
+      LoginViewModel com_schemewise_app_ui_screens_auth_LoginViewModel2;
+
+      @KeepFieldType
+      SchemeDetailViewModel com_schemewise_app_ui_screens_scheme_SchemeDetailViewModel2;
+
+      @KeepFieldType
+      ExploreViewModel com_schemewise_app_ui_screens_explore_ExploreViewModel2;
+
+      @KeepFieldType
+      BotViewModel com_schemewise_app_ui_screens_bot_BotViewModel2;
+
+      @KeepFieldType
+      UpdatesViewModel com_schemewise_app_ui_screens_updates_UpdatesViewModel2;
+
+      @KeepFieldType
+      CentersMapViewModel com_schemewise_app_ui_screens_centers_CentersMapViewModel2;
+
+      @KeepFieldType
+      ProfileViewModel com_schemewise_app_ui_screens_profile_ProfileViewModel2;
+
+      @KeepFieldType
+      SavedViewModel com_schemewise_app_ui_screens_saved_SavedViewModel2;
+    }
+
+    private static final class SwitchingProvider<T> implements Provider<T> {
+      private final SingletonCImpl singletonCImpl;
+
+      private final ActivityRetainedCImpl activityRetainedCImpl;
+
+      private final ViewModelCImpl viewModelCImpl;
+
+      private final int id;
+
+      SwitchingProvider(SingletonCImpl singletonCImpl, ActivityRetainedCImpl activityRetainedCImpl,
+          ViewModelCImpl viewModelCImpl, int id) {
+        this.singletonCImpl = singletonCImpl;
+        this.activityRetainedCImpl = activityRetainedCImpl;
+        this.viewModelCImpl = viewModelCImpl;
+        this.id = id;
+      }
+
+      @SuppressWarnings("unchecked")
+      @Override
+      public T get() {
+        switch (id) {
+          case 0: // com.schemewise.app.ui.screens.bot.BotViewModel 
+          return (T) new BotViewModel(singletonCImpl.provideApiServiceProvider.get(), singletonCImpl.profileRepositoryProvider.get());
+
+          case 1: // com.schemewise.app.ui.screens.centers.CentersMapViewModel 
+          return (T) new CentersMapViewModel(singletonCImpl.profileRepositoryProvider.get(), singletonCImpl.providePrefsManagerProvider.get());
+
+          case 2: // com.schemewise.app.ui.screens.scheme.CompareViewModel 
+          return (T) new CompareViewModel(singletonCImpl.schemeRepositoryProvider.get(), singletonCImpl.profileRepositoryProvider.get());
+
+          case 3: // com.schemewise.app.ui.screens.onboarding.DetailsFillingViewModel 
+          return (T) new DetailsFillingViewModel(singletonCImpl.profileRepositoryProvider.get(), singletonCImpl.schemeRepositoryProvider.get(), singletonCImpl.providePrefsManagerProvider.get());
+
+          case 4: // com.schemewise.app.ui.screens.onboarding.EligibilityResultsViewModel 
+          return (T) new EligibilityResultsViewModel(singletonCImpl.schemeRepositoryProvider.get(), singletonCImpl.profileRepositoryProvider.get());
+
+          case 5: // com.schemewise.app.ui.screens.explore.ExploreViewModel 
+          return (T) new ExploreViewModel(singletonCImpl.schemeRepositoryProvider.get(), singletonCImpl.profileRepositoryProvider.get());
+
+          case 6: // com.schemewise.app.ui.screens.auth.ForgotPasswordViewModel 
+          return (T) new ForgotPasswordViewModel(singletonCImpl.authRepositoryProvider.get());
+
+          case 7: // com.schemewise.app.ui.screens.home.HomeViewModel 
+          return (T) new HomeViewModel(singletonCImpl.schemeRepositoryProvider.get(), singletonCImpl.profileRepositoryProvider.get(), singletonCImpl.providePrefsManagerProvider.get());
+
+          case 8: // com.schemewise.app.ui.screens.auth.LoginViewModel 
+          return (T) new LoginViewModel(singletonCImpl.authRepositoryProvider.get());
+
+          case 9: // com.schemewise.app.ui.screens.profile.ProfileViewModel 
+          return (T) new ProfileViewModel(singletonCImpl.profileRepositoryProvider.get(), singletonCImpl.schemeRepositoryProvider.get(), singletonCImpl.authRepositoryProvider.get(), singletonCImpl.providePrefsManagerProvider.get());
+
+          case 10: // com.schemewise.app.ui.screens.auth.RegisterViewModel 
+          return (T) new RegisterViewModel(singletonCImpl.authRepositoryProvider.get());
+
+          case 11: // com.schemewise.app.ui.screens.saved.SavedViewModel 
+          return (T) new SavedViewModel(singletonCImpl.schemeRepositoryProvider.get(), singletonCImpl.providePrefsManagerProvider.get());
+
+          case 12: // com.schemewise.app.ui.screens.scheme.SchemeDetailViewModel 
+          return (T) new SchemeDetailViewModel(singletonCImpl.schemeRepositoryProvider.get(), singletonCImpl.profileRepositoryProvider.get(), singletonCImpl.providePrefsManagerProvider.get());
+
+          case 13: // com.schemewise.app.ui.screens.simulator.SimulatorViewModel 
+          return (T) new SimulatorViewModel(singletonCImpl.schemeRepositoryProvider.get());
+
+          case 14: // com.schemewise.app.ui.screens.updates.UpdatesViewModel 
+          return (T) new UpdatesViewModel(singletonCImpl.schemeRepositoryProvider.get());
+
+          default: throw new AssertionError(id);
+        }
+      }
+    }
+  }
+
+  private static final class ActivityRetainedCImpl extends SchemeWiseApp_HiltComponents.ActivityRetainedC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ActivityRetainedCImpl activityRetainedCImpl = this;
+
+    private Provider<ActivityRetainedLifecycle> provideActivityRetainedLifecycleProvider;
+
+    private ActivityRetainedCImpl(SingletonCImpl singletonCImpl,
+        SavedStateHandleHolder savedStateHandleHolderParam) {
+      this.singletonCImpl = singletonCImpl;
+
+      initialize(savedStateHandleHolderParam);
+
+    }
+
+    @SuppressWarnings("unchecked")
+    private void initialize(final SavedStateHandleHolder savedStateHandleHolderParam) {
+      this.provideActivityRetainedLifecycleProvider = DoubleCheck.provider(new SwitchingProvider<ActivityRetainedLifecycle>(singletonCImpl, activityRetainedCImpl, 0));
+    }
+
+    @Override
+    public ActivityComponentBuilder activityComponentBuilder() {
+      return new ActivityCBuilder(singletonCImpl, activityRetainedCImpl);
+    }
+
+    @Override
+    public ActivityRetainedLifecycle getActivityRetainedLifecycle() {
+      return provideActivityRetainedLifecycleProvider.get();
+    }
+
+    private static final class SwitchingProvider<T> implements Provider<T> {
+      private final SingletonCImpl singletonCImpl;
+
+      private final ActivityRetainedCImpl activityRetainedCImpl;
+
+      private final int id;
+
+      SwitchingProvider(SingletonCImpl singletonCImpl, ActivityRetainedCImpl activityRetainedCImpl,
+          int id) {
+        this.singletonCImpl = singletonCImpl;
+        this.activityRetainedCImpl = activityRetainedCImpl;
+        this.id = id;
+      }
+
+      @SuppressWarnings("unchecked")
+      @Override
+      public T get() {
+        switch (id) {
+          case 0: // dagger.hilt.android.ActivityRetainedLifecycle 
+          return (T) ActivityRetainedComponentManager_LifecycleModule_ProvideActivityRetainedLifecycleFactory.provideActivityRetainedLifecycle();
+
+          default: throw new AssertionError(id);
+        }
+      }
+    }
+  }
+
+  private static final class ServiceCImpl extends SchemeWiseApp_HiltComponents.ServiceC {
+    private final SingletonCImpl singletonCImpl;
+
+    private final ServiceCImpl serviceCImpl = this;
+
+    private ServiceCImpl(SingletonCImpl singletonCImpl, Service serviceParam) {
+      this.singletonCImpl = singletonCImpl;
+
+
+    }
+  }
+
+  private static final class SingletonCImpl extends SchemeWiseApp_HiltComponents.SingletonC {
+    private final ApplicationContextModule applicationContextModule;
+
+    private final SingletonCImpl singletonCImpl = this;
+
+    private Provider<PrefsManager> providePrefsManagerProvider;
+
+    private Provider<OkHttpClient> provideOkHttpProvider;
+
+    private Provider<Moshi> provideMoshiProvider;
+
+    private Provider<Retrofit> provideRetrofitProvider;
+
+    private Provider<ApiService> provideApiServiceProvider;
+
+    private Provider<ProfileRepository> profileRepositoryProvider;
+
+    private Provider<SchemeRepository> schemeRepositoryProvider;
+
+    private Provider<AuthRepository> authRepositoryProvider;
+
+    private SingletonCImpl(ApplicationContextModule applicationContextModuleParam) {
+      this.applicationContextModule = applicationContextModuleParam;
+      initialize(applicationContextModuleParam);
+
+    }
+
+    private AuthInterceptor authInterceptor() {
+      return new AuthInterceptor(providePrefsManagerProvider.get());
+    }
+
+    @SuppressWarnings("unchecked")
+    private void initialize(final ApplicationContextModule applicationContextModuleParam) {
+      this.providePrefsManagerProvider = DoubleCheck.provider(new SwitchingProvider<PrefsManager>(singletonCImpl, 3));
+      this.provideOkHttpProvider = DoubleCheck.provider(new SwitchingProvider<OkHttpClient>(singletonCImpl, 2));
+      this.provideMoshiProvider = DoubleCheck.provider(new SwitchingProvider<Moshi>(singletonCImpl, 4));
+      this.provideRetrofitProvider = DoubleCheck.provider(new SwitchingProvider<Retrofit>(singletonCImpl, 1));
+      this.provideApiServiceProvider = DoubleCheck.provider(new SwitchingProvider<ApiService>(singletonCImpl, 0));
+      this.profileRepositoryProvider = DoubleCheck.provider(new SwitchingProvider<ProfileRepository>(singletonCImpl, 5));
+      this.schemeRepositoryProvider = DoubleCheck.provider(new SwitchingProvider<SchemeRepository>(singletonCImpl, 6));
+      this.authRepositoryProvider = DoubleCheck.provider(new SwitchingProvider<AuthRepository>(singletonCImpl, 7));
+    }
+
+    @Override
+    public void injectSchemeWiseApp(SchemeWiseApp arg0) {
+    }
+
+    @Override
+    public Set<Boolean> getDisableFragmentGetContextFix() {
+      return Collections.<Boolean>emptySet();
+    }
+
+    @Override
+    public ActivityRetainedComponentBuilder retainedComponentBuilder() {
+      return new ActivityRetainedCBuilder(singletonCImpl);
+    }
+
+    @Override
+    public ServiceComponentBuilder serviceComponentBuilder() {
+      return new ServiceCBuilder(singletonCImpl);
+    }
+
+    private static final class SwitchingProvider<T> implements Provider<T> {
+      private final SingletonCImpl singletonCImpl;
+
+      private final int id;
+
+      SwitchingProvider(SingletonCImpl singletonCImpl, int id) {
+        this.singletonCImpl = singletonCImpl;
+        this.id = id;
+      }
+
+      @SuppressWarnings("unchecked")
+      @Override
+      public T get() {
+        switch (id) {
+          case 0: // com.schemewise.app.data.api.ApiService 
+          return (T) AppModule_ProvideApiServiceFactory.provideApiService(singletonCImpl.provideRetrofitProvider.get());
+
+          case 1: // retrofit2.Retrofit 
+          return (T) AppModule_ProvideRetrofitFactory.provideRetrofit(singletonCImpl.provideOkHttpProvider.get(), singletonCImpl.provideMoshiProvider.get());
+
+          case 2: // okhttp3.OkHttpClient 
+          return (T) AppModule_ProvideOkHttpFactory.provideOkHttp(singletonCImpl.authInterceptor());
+
+          case 3: // com.schemewise.app.data.local.PrefsManager 
+          return (T) AppModule_ProvidePrefsManagerFactory.providePrefsManager(ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule));
+
+          case 4: // com.squareup.moshi.Moshi 
+          return (T) AppModule_ProvideMoshiFactory.provideMoshi();
+
+          case 5: // com.schemewise.app.data.repository.ProfileRepository 
+          return (T) new ProfileRepository(singletonCImpl.provideApiServiceProvider.get(), singletonCImpl.providePrefsManagerProvider.get());
+
+          case 6: // com.schemewise.app.data.repository.SchemeRepository 
+          return (T) new SchemeRepository(singletonCImpl.provideApiServiceProvider.get());
+
+          case 7: // com.schemewise.app.data.repository.AuthRepository 
+          return (T) new AuthRepository(singletonCImpl.provideApiServiceProvider.get(), singletonCImpl.providePrefsManagerProvider.get());
+
+          default: throw new AssertionError(id);
+        }
+      }
+    }
+  }
+}

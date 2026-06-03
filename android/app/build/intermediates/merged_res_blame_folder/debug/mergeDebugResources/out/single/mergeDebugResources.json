@@ -1,0 +1,82 @@
+[
+    {
+        "merged": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-debug-80:\\font_outfit_medium.ttf.flat",
+        "source": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-main-82:\\font\\outfit_medium.ttf"
+    },
+    {
+        "merged": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-debug-80:\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-main-82:\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-debug-80:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-main-82:\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-debug-80:\\layout_activity_subscription.xml.flat",
+        "source": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-main-82:\\layout\\activity_subscription.xml"
+    },
+    {
+        "merged": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-debug-80:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-main-82:\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-debug-80:\\font_outfit_bold.ttf.flat",
+        "source": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-main-82:\\font\\outfit_bold.ttf"
+    },
+    {
+        "merged": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-debug-80:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-main-82:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-debug-80:\\font_outfit_regular.ttf.flat",
+        "source": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-main-82:\\font\\outfit_regular.ttf"
+    },
+    {
+        "merged": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-debug-80:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-main-82:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-debug-80:\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-main-82:\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "com.schemewise.app-debug-80:/layout_activity_subscription.xml.flat",
+        "source": "com.schemewise.app-main-82:/layout/activity_subscription.xml"
+    },
+    {
+        "merged": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-debug-80:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-main-82:\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-debug-80:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-main-82:\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-debug-80:\\font_outfit_extrabold.ttf.flat",
+        "source": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-main-82:\\font\\outfit_extrabold.ttf"
+    },
+    {
+        "merged": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-debug-80:\\font_outfit_black.ttf.flat",
+        "source": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-main-82:\\font\\outfit_black.ttf"
+    },
+    {
+        "merged": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-debug-80:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-main-82:\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-debug-80:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-main-82:\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-debug-80:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-main-82:\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-debug-80:\\font_outfit_semibold.ttf.flat",
+        "source": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-main-82:\\font\\outfit_semibold.ttf"
+    },
+    {
+        "merged": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-debug-80:\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\yogen\\.gradle\\daemon\\8.13\\com.schemewise.app-main-82:\\mipmap-hdpi\\ic_launcher_round.png"
+    }
+]

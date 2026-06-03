@@ -1,0 +1,11 @@
+{
+  "appId": "xyz.schemewise.app",
+  "appName": "SchemeWise",
+  "webDir": "dist",
+  "server": {
+    "cleartext": true
+  },
+  "android": {
+    "allowMixedContent": true
+  }
+}

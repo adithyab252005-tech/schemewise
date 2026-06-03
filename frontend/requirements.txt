@@ -1,0 +1,3 @@
+# The frontend is built using React / Vite and uses Node.js.
+# All frontend dependency requirements are securely defined in package.json.
+# This file is provided to satisfy repository structure checks.

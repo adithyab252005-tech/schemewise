@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"from PIL import ImageFont; f = ImageFont.truetype\\('C:/Windows/Fonts/arialbd.ttf', 80\\); print\\('Font OK'\\)\")"
+    ]
+  }
+}

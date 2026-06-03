@@ -1,0 +1,211 @@
+-if class com.schemewise.app.data.api.AnomalyCheckRequest
+-keepnames class com.schemewise.app.data.api.AnomalyCheckRequest
+-if class com.schemewise.app.data.api.AnomalyCheckRequest
+-keep class com.schemewise.app.data.api.AnomalyCheckRequestJsonAdapter {
+    public <init>(com.squareup.moshi.Moshi);
+}
+
+-if class com.schemewise.app.data.api.AnomalyCheckResponse
+-keepnames class com.schemewise.app.data.api.AnomalyCheckResponse
+-if class com.schemewise.app.data.api.AnomalyCheckResponse
+-keep class com.schemewise.app.data.api.AnomalyCheckResponseJsonAdapter {
+    public <init>(com.squareup.moshi.Moshi);
+}
+-if class com.schemewise.app.data.api.AnomalyCheckResponse
+-keepnames class kotlin.jvm.internal.DefaultConstructorMarker
+-if class com.schemewise.app.data.api.AnomalyCheckResponse
+-keepclassmembers class com.schemewise.app.data.api.AnomalyCheckResponse {
+    public synthetic <init>(java.util.List,java.lang.String,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-if class com.schemewise.app.data.api.CompareRequest
+-keepnames class com.schemewise.app.data.api.CompareRequest
+-if class com.schemewise.app.data.api.CompareRequest
+-keep class com.schemewise.app.data.api.CompareRequestJsonAdapter {
+    public <init>(com.squareup.moshi.Moshi);
+}
+
+-if class com.schemewise.app.data.api.CompareResponse
+-keepnames class com.schemewise.app.data.api.CompareResponse
+-if class com.schemewise.app.data.api.CompareResponse
+-keep class com.schemewise.app.data.api.CompareResponseJsonAdapter {
+    public <init>(com.squareup.moshi.Moshi);
+}
+-if class com.schemewise.app.data.api.CompareResponse
+-keepnames class kotlin.jvm.internal.DefaultConstructorMarker
+-if class com.schemewise.app.data.api.CompareResponse
+-keepclassmembers class com.schemewise.app.data.api.CompareResponse {
+    public synthetic <init>(java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-if class com.schemewise.app.data.api.FetchDetailsResponse
+-keepnames class com.schemewise.app.data.api.FetchDetailsResponse
+-if class com.schemewise.app.data.api.FetchDetailsResponse
+-keep class com.schemewise.app.data.api.FetchDetailsResponseJsonAdapter {
+    public <init>(com.squareup.moshi.Moshi);
+}
+-if class com.schemewise.app.data.api.FetchDetailsResponse
+-keepnames class kotlin.jvm.internal.DefaultConstructorMarker
+-if class com.schemewise.app.data.api.FetchDetailsResponse
+-keepclassmembers class com.schemewise.app.data.api.FetchDetailsResponse {
+    public synthetic <init>(java.lang.String,java.lang.String,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-if class com.schemewise.app.data.api.ForgotPasswordRequest
+-keepnames class com.schemewise.app.data.api.ForgotPasswordRequest
+-if class com.schemewise.app.data.api.ForgotPasswordRequest
+-keep class com.schemewise.app.data.api.ForgotPasswordRequestJsonAdapter {
+    public <init>(com.squareup.moshi.Moshi);
+}
+
+-if class com.schemewise.app.data.api.ProfileResponse
+-keepnames class com.schemewise.app.data.api.ProfileResponse
+-if class com.schemewise.app.data.api.ProfileResponse
+-keep class com.schemewise.app.data.api.ProfileResponseJsonAdapter {
+    public <init>(com.squareup.moshi.Moshi);
+}
+
+-if class com.schemewise.app.data.api.ResetPasswordRequest
+-keepnames class com.schemewise.app.data.api.ResetPasswordRequest
+-if class com.schemewise.app.data.api.ResetPasswordRequest
+-keep class com.schemewise.app.data.api.ResetPasswordRequestJsonAdapter {
+    public <init>(com.squareup.moshi.Moshi);
+}
+-if class com.schemewise.app.data.api.ResetPasswordRequest
+-keepnames class kotlin.jvm.internal.DefaultConstructorMarker
+-if class com.schemewise.app.data.api.ResetPasswordRequest
+-keepclassmembers class com.schemewise.app.data.api.ResetPasswordRequest {
+    public synthetic <init>(java.lang.String,java.lang.String,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-if class com.schemewise.app.data.api.VerifyOtpRequest
+-keepnames class com.schemewise.app.data.api.VerifyOtpRequest
+-if class com.schemewise.app.data.api.VerifyOtpRequest
+-keep class com.schemewise.app.data.api.VerifyOtpRequestJsonAdapter {
+    public <init>(com.squareup.moshi.Moshi);
+}
+
+-if class com.schemewise.app.data.model.AuthRequest
+-keepnames class com.schemewise.app.data.model.AuthRequest
+-if class com.schemewise.app.data.model.AuthRequest
+-keep class com.schemewise.app.data.model.AuthRequestJsonAdapter {
+    public <init>(com.squareup.moshi.Moshi);
+}
+
+-if class com.schemewise.app.data.model.AuthResponse
+-keepnames class com.schemewise.app.data.model.AuthResponse
+-if class com.schemewise.app.data.model.AuthResponse
+-keep class com.schemewise.app.data.model.AuthResponseJsonAdapter {
+    public <init>(com.squareup.moshi.Moshi);
+}
+-if class com.schemewise.app.data.model.AuthResponse
+-keepnames class kotlin.jvm.internal.DefaultConstructorMarker
+-if class com.schemewise.app.data.model.AuthResponse
+-keepclassmembers class com.schemewise.app.data.model.AuthResponse {
+    public synthetic <init>(java.lang.String,com.schemewise.app.data.model.User,java.lang.String,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-if class com.schemewise.app.data.model.ChatMessage
+-keepnames class com.schemewise.app.data.model.ChatMessage
+-if class com.schemewise.app.data.model.ChatMessage
+-keep class com.schemewise.app.data.model.ChatMessageJsonAdapter {
+    public <init>(com.squareup.moshi.Moshi);
+}
+
+-if class com.schemewise.app.data.model.ChatRequest
+-keepnames class com.schemewise.app.data.model.ChatRequest
+-if class com.schemewise.app.data.model.ChatRequest
+-keep class com.schemewise.app.data.model.ChatRequestJsonAdapter {
+    public <init>(com.squareup.moshi.Moshi);
+}
+-if class com.schemewise.app.data.model.ChatRequest
+-keepnames class kotlin.jvm.internal.DefaultConstructorMarker
+-if class com.schemewise.app.data.model.ChatRequest
+-keepclassmembers class com.schemewise.app.data.model.ChatRequest {
+    public synthetic <init>(java.lang.String,java.util.List,com.schemewise.app.data.model.Profile,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-if class com.schemewise.app.data.model.ChatResponse
+-keepnames class com.schemewise.app.data.model.ChatResponse
+-if class com.schemewise.app.data.model.ChatResponse
+-keep class com.schemewise.app.data.model.ChatResponseJsonAdapter {
+    public <init>(com.squareup.moshi.Moshi);
+}
+-if class com.schemewise.app.data.model.ChatResponse
+-keepnames class kotlin.jvm.internal.DefaultConstructorMarker
+-if class com.schemewise.app.data.model.ChatResponse
+-keepclassmembers class com.schemewise.app.data.model.ChatResponse {
+    public synthetic <init>(java.lang.String,java.util.List,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-if class com.schemewise.app.data.model.EligibilityResult
+-keepnames class com.schemewise.app.data.model.EligibilityResult
+-if class com.schemewise.app.data.model.EligibilityResult
+-keep class com.schemewise.app.data.model.EligibilityResultJsonAdapter {
+    public <init>(com.squareup.moshi.Moshi);
+}
+-if class com.schemewise.app.data.model.EligibilityResult
+-keepnames class kotlin.jvm.internal.DefaultConstructorMarker
+-if class com.schemewise.app.data.model.EligibilityResult
+-keepclassmembers class com.schemewise.app.data.model.EligibilityResult {
+    public synthetic <init>(int,java.lang.String,java.lang.String,int,java.util.List,java.lang.String,int,java.lang.String,java.lang.String,int,java.lang.String,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-if class com.schemewise.app.data.model.Profile
+-keepnames class com.schemewise.app.data.model.Profile
+-if class com.schemewise.app.data.model.Profile
+-keep class com.schemewise.app.data.model.ProfileJsonAdapter {
+    public <init>(com.squareup.moshi.Moshi);
+}
+-if class com.schemewise.app.data.model.Profile
+-keepnames class kotlin.jvm.internal.DefaultConstructorMarker
+-if class com.schemewise.app.data.model.Profile
+-keepclassmembers class com.schemewise.app.data.model.Profile {
+    public synthetic <init>(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.Double,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.util.List,java.lang.String,java.lang.String,java.lang.String,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-if class com.schemewise.app.data.model.RegisterRequest
+-keepnames class com.schemewise.app.data.model.RegisterRequest
+-if class com.schemewise.app.data.model.RegisterRequest
+-keep class com.schemewise.app.data.model.RegisterRequestJsonAdapter {
+    public <init>(com.squareup.moshi.Moshi);
+}
+
+-if class com.schemewise.app.data.model.Scheme
+-keepnames class com.schemewise.app.data.model.Scheme
+-if class com.schemewise.app.data.model.Scheme
+-keep class com.schemewise.app.data.model.SchemeJsonAdapter {
+    public <init>(com.squareup.moshi.Moshi);
+}
+-if class com.schemewise.app.data.model.Scheme
+-keepnames class kotlin.jvm.internal.DefaultConstructorMarker
+-if class com.schemewise.app.data.model.Scheme
+-keepclassmembers class com.schemewise.app.data.model.Scheme {
+    public synthetic <init>(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Object,java.lang.Object,java.lang.String,java.lang.String,java.lang.Double,java.lang.Double,java.lang.Double,java.lang.Double,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-if class com.schemewise.app.data.model.User
+-keepnames class com.schemewise.app.data.model.User
+-if class com.schemewise.app.data.model.User
+-keep class com.schemewise.app.data.model.UserJsonAdapter {
+    public <init>(com.squareup.moshi.Moshi);
+}
+-if class com.schemewise.app.data.model.User
+-keepnames class kotlin.jvm.internal.DefaultConstructorMarker
+-if class com.schemewise.app.data.model.User
+-keepclassmembers class com.schemewise.app.data.model.User {
+    public synthetic <init>(int,java.lang.String,java.lang.String,boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-if class com.schemewise.app.data.model.VerifyEmailResponse
+-keepnames class com.schemewise.app.data.model.VerifyEmailResponse
+-if class com.schemewise.app.data.model.VerifyEmailResponse
+-keep class com.schemewise.app.data.model.VerifyEmailResponseJsonAdapter {
+    public <init>(com.squareup.moshi.Moshi);
+}
+-if class com.schemewise.app.data.model.VerifyEmailResponse
+-keepnames class kotlin.jvm.internal.DefaultConstructorMarker
+-if class com.schemewise.app.data.model.VerifyEmailResponse
+-keepclassmembers class com.schemewise.app.data.model.VerifyEmailResponse {
+    public synthetic <init>(java.lang.String,com.schemewise.app.data.model.User,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
