@@ -45,10 +45,7 @@ def fetch_scheme_text(url):
     except Exception as e:
         return None
 
-GROQ_KEYS = [
-    "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",  # New User Key
-    "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"   # Org Config Key
-]
+GROQ_KEYS = []
 current_key_idx = 0
 
 def get_llm_json(text_content, retry_count=0):
